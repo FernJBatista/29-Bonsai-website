@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Bonsai - Pricing</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    
 </head>
 <body>
 
     <header>
         <nav>
             <div id="desktop-nav">
-                <img src="#" alt="Bonsai Logo">
+                <img src="http://web.archive.org/web/20221117021714im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg" alt="Bonsai Logo">
                 <ul>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Template</a></li>
+                    <li>
+                        <a href="#">Product</a><box-icon name='chevron-down'></box-icon>
+                        <div id="prod-dropdown">
+                            <div class="dropdown-item">
+                                <h3>Bonsai Workflow</h3>
+                                <p>Look professional, win more clients and manage your business from one place</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Template</a><box-icon name='chevron-down'></box-icon></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Review</a></li>
                 </ul>
 
                 <div id="nav-cta">
                     <a href="#"><button>Log In</button></a>
-                    <a href="#"><button>Start free</button></a>
+                    <a href="#"><button class="main-button">Start free</button></a>
                 </div>
             </div>
 
@@ -38,13 +54,13 @@
                         <li>
                             <div>
                                 <a href="#">Product</a>
-                                <!-- Add arrow -->
+                                <box-icon name='chevron-down'></box-icon>
                             </div>
                         </li>
                         <li>
                             <div>
                                 <a href="#">Templates</a>
-                                <!-- Add arrow -->
+                                <box-icon name='chevron-down'></box-icon>
                             </div>
                         </li>
                         <li>
@@ -71,94 +87,127 @@
 
     <main>
 
+        <div class="blue-shape"></div>
+
 
         <section id="plans-and-pricing">
 
             <div id="pricing-title">
                 <h1>Plans & Pricing</h1>
-                <h2>Monthly</h2>
-                <!-- Create a toggle switch here -->
-                 <h3>Yearly</h3>
-                 <img src="#" alt="Two Months Free! Image">
+                <div id="toggle-holder">
+                    <h2>Monthly</h2>
+                    <label class="switch">
+                        <input id="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <h2>Yearly</h2> 
+                    <img src="http://web.archive.org/web/20221117021714im_/https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e9d7255d3886a6103fb12a9_FREE-text.svg" alt="Two Months Free!">
+                </div>
             </div>
 
             <div id="pricing-plans">
 
-                <div class="plan">
-                    <div class="title">
-                        <h3>Starter</h3> 
-                        <p>Ideal for freelancers and contractors just starting out</p>
-                    </div>
-                    <div class="price">
-                        <p>$</p>
-                        <h2>24</h2>
-                        <p>/month</p>
-                    </div>
-                    <div class="features">
-                        <ul>
-                            <li>All Templates</li>
-                            <li>Unlimited Clients & Projects</li>
-                            <li>Invoicing & Payments</li>
-                            <li>Proposals & Contracts</li>
-                            <li>Tasks & Time Tracking</li>
-                            <li>Client CRM</li>
-                            <li>Expense Tracking</li>
-                            <li>Up to 5 Project Collaborators</li>
-                        </ul>
-                    </div>
-                    <a href="#"><button>Start Free</button></a>
+                <div class="plan" id="col1">
+
+                    <div class="plan-item">
+
+                        <div class="plan-content">
+
+                            <div class="title">
+                                <h3>Starter</h3> 
+                                <p>Ideal for freelancers and contractors just starting out</p>
+                            </div>
+
+                            <div class="price">
+                                <box-icon name='dollar' color='#4c4d5f' ></box-icon>
+                                <h2>24</h2>
+                                <p>/month</p>
+                            </div>
+
+                            <div class="features">
+                                <ul>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>All Templates</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Unlimited Clients & Projects</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Invoicing & Payments</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Proposals & Contracts</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Tasks & Time Tracking</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Client CRM</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Expense Tracking</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Up to 5 Project Collaborators</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="#"><button>Start Free</button></a>
+
+                    </div>  
+
                 </div>
                 
-                <div class="plan">
-                    <div class="title">
-                        <h3>Professional</h3> 
-                        <p>Everything a growing independent business needs to thrive.
-                        </p>
+                <div class="plan" id="col2">
+                    <div class="plan-item">
+                        <div class="plan-content">
+                            <div class="title">
+                                <h3>Professional</h3> 
+                                <p>Everything a growing independent business needs to thrive.
+                                </p>
+                            </div>
+                            <div class="price">
+                                <box-icon name='dollar' color='#4c4d5f' ></box-icon>
+                                <h2>39</h2>
+                                <p>/month</p>
+                            </div>
+                            <div class="features">
+                                <ul>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Everything in Starter plus...</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Custom Branding</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Forms & Questionnaires</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Workflow Automations</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Client Portal</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>QuickBooks Integration</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Calendly Integration</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Up to 15 Project Collaborators</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="#"><button>Start Free</button></a>
+
                     </div>
-                    <div class="price">
-                        <p>$</p>
-                        <h2>39</h2>
-                        <p>/month</p>
-                    </div>
-                    <div class="features">
-                        <ul>
-                            <li>Everything in Starter plus...</li>
-                            <li>Custom Branding</li>
-                            <li>Forms & Questionnaires</li>
-                            <li>Workflow Automations</li>
-                            <li>Client Portal</li>
-                            <li>QuickBooks Integration</li>
-                            <li>Calendly Integration</li>
-                            <li>Up to 15 Project Collaborators</li>
-                        </ul>
-                    </div>
-                    <a href="#"><button>Start Free</button></a>
+                    
                 </div>
 
-                <div class="plan">
-                    <div class="title">
-                        <h3>Business</h3> 
-                        <p>The perfect package for small businesses and agencies.</p>
+                <div class="plan" id="col3">
+                    <div class="plan-item">
+                        <div class="plan-content">
+                            <div class="title">
+                                <h3>Business</h3> 
+                                <p>The perfect package for small businesses and agencies.</p>
+                            </div>
+                            <div class="price">
+                                <box-icon name='dollar' color='#4c4d5f' ></box-icon>
+                                <h2>79</h2>
+                                <p>/month</p>
+                            </div>
+                            <div class="features">
+                                <ul>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Everything in Started and Preffisonal plus...</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Subcontractor Management</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Hiring Agreement Templates (1099 contracts)</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Talent Pool</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Tasks3 Team Seats (additional seats $9/month)</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Accountant Access</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Connect Multiple Bank Accounts</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Unlimited Subcontractors</li>
+                                    <li><box-icon name='check' color='#00b289' ></box-icon>Unlimited Project Collaborators</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="#"><button>Start Free</button></a>
+
                     </div>
-                    <div class="price">
-                        <p>$</p>
-                        <h2>79</h2>
-                        <p>/month</p>
-                    </div>
-                    <div class="features">
-                        <ul>
-                            <li>Everything in Started and Preffisonal plus...</li>
-                            <li>Subcontractor Management</li>
-                            <li>Hiring Agreement Templates (1099 contracts)</li>
-                            <li>Talent Pool</li>
-                            <li>Tasks3 Team Seats (additional seats $9/month)</li>
-                            <li>Accountant Access</li>
-                            <li>Connect Multiple Bank Accounts</li>
-                            <li>Unlimited Subcontractors</li>
-                            <li>Unlimited Project Collaborators</li>
-                        </ul>
-                    </div>
-                    <a href="#"><button>Start Free</button></a>
+                    
                 </div>
 
             </div>
@@ -182,16 +231,22 @@
                     <h3>Partners</h3>
                     <p>Invite other users for full account access and company management</p>
                 </div>
-                <h2>$9</h2>
+                <div class="price">
+                    <h2>$9</h2>
+                    <h4>/Month</h4>
+                </div>
             </div>
 
             <div class="add-on">
                 <div class="content">
                     <h3>Bonsai Tax</h3>
                     <p>Track expenses, identify write-offs, and estimate quaterly taxes easely</p>
-                    <a href="#"><button>Learn More</button><!-- Add arrow here --></a>
+                    <a href="#"><button>Learn More</button><box-icon name='chevron-right' color='#00b289' ></box-icon></a>
                 </div>
-                <h2>Free</h2>
+                <div class="price">
+                    <h2>$10</h2>
+                    <h4>/Month</h4>
+                </div>
             </div>
 
         </section>
@@ -199,16 +254,64 @@
         <section id="cta">
 
             <div class="container">
-                <h2>It's <span>your</span> business. We're here to help it grow.</h2>
+                <h2>
+                    It's <span>your</span> business. 
+                    <br>
+                    We're here to help it grow.
+                </h2>
                 <a href="#"><button>Start Free</button></a>
             </div>
 
         </section>
 
         <section id="faq">
+            
+            <h2>Frequently Asked Questions</h2>
 
-            <!-- Add accordions here -->
+            <div id="faq-container">
 
+                <div class="faq-item">
+                    <button class="accordion">
+                        How does the free trial work?
+                        <box-icon name='chevron-down' color='#00000025' size="32px" ></box-icon>
+                    </button>
+                    <div class="accordion-content">
+                        <p>When you start your trial with Bonsai you'll receive full, unlimited access to all of Bonsai's Workflow or Workflow Plus Features! You will need to enter your credit card information to begin your trial, but don't worry - we won't charge you anything until the subscription ends! If you wish to cancel at any time during the trial period, you can do so through your Subscriptions Settings Page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="accordion">
+                        Can I change plans anytime?
+                        <box-icon name='chevron-down' color='#00000025' size="32px" ></box-icon>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, you can from within your account. If you have already subscribed to a plan, or want to downgrade or upgrade your current one, you can do this by going to your "Settings" and "Subscription".</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="accordion">
+                        How do I pause my Bonsai subscription?
+                        <box-icon name='chevron-down' color='#00000025' size="32px" ></box-icon>
+                    </button>
+                    <div class="accordion-content">
+                        <p>e totally understand that with the nature of freelancing, work ebbs and flows so you might not always need your Bonsai subscription to remain active! The good news is that you can cancel or pause your monthly subscription at any time without penalty. Once cancelled, you'll be able to continue logging in to access all your documents and even continue to use our free features, like Time Tracking! In order to cancel your subscription, login to your Bonsai account.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="accordion">
+                        What is your refund policy?
+                        <box-icon name='chevron-down' color='#00000025' size="32px" ></box-icon>
+                    </button>
+                    <div class="accordion-content">
+                        <p>If you contact us within 2 weeks of being charged for your subscription, we will be happy to issue a refund for you!Beyond those 2 weeks, you will need to cancel or modify the subscription from the Subscriptions Tab in Settings to avoid future charges, but refunds will not be issued. This applies to both monthly and annual plans.</p>
+                    </div>
+                </div>
+
+            </div>
+            
         </section>
 
 
@@ -218,77 +321,90 @@
 
         <div class="col">
 
-            <h2>Product</h2>
-            <ul>
-                <li><a href="#">Proposals</a></li>
-                <li><a href="#">Contracts</a></li>
-                <li><a href="#">Invoicing</a></li>
-                <li><a href="#">Client CRM</a></li>
-                <li><a href="#">Time Tracking</a></li>
-                <li><a href="#">Task Tracking</a></li>
-                <li><a href="#">Forms</a></li>
-                <li><a href="#">Accounting</a></li>
-                <li><a href="#">Bonsai Tax</a></li>
-                <li><a href="#">Bonsai Cash</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Bonsai Reviews</a></li>
-            </ul>
+            <div class="footer-section">
+                <h2>Product</h2>
+                <h3><a href="#">Proposals</a></h3>
+                <h3><a href="#">Contracts</a></h3>
+                <h3><a href="#">Invoicing</a></h3>
+                <h3><a href="#">Client CRM</a></h3>
+                <h3><a href="#">Time Tracking</a></h3>
+                <h3><a href="#">Task Tracking</a></h3>
+                <h3><a href="#">Forms</a></h3>
+                <h3><a href="#">Accounting</a></h3>
+                <h3><a href="#">Bonsai Tax</a></h3>
+                <h3><a href="#">Bonsai Cash</a></h3>
+            </div>
+
+            <div class="footer-section">
+                <h3><a href="#" class="green">Pricing</a></h3>
+                <h3><a href="#">Bonsai Reviews</a></h3>
+            </div>
             
         </div>
 
         <div class="col">
 
-            <h2>Free Resources</h2>
-            <ul>
-                <li><a href="#">Freelance Resources</a></li>
-                <li><a href="#">Freelance Blog by Bonsai</a></li>
-                <li><a href="#">How to Write a Contract</a></li>
-                <li><a href="#">Online Signature Maker</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Self-Employed</a></li> 
-                <li><a href="#">Self-Employed Tax Calculator</a></li>
-                <li><a href="#">Self-Employed Tax Deductions</a></li>
-            </ul>
+            <div class="footer-section">
 
-            <h4>Templates</h4>
-            <ul>
-                <li><a href="#">Invoice Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Proposal Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Contract Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Agreement Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Scope of Work Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Quote Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Credit Note Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Estimate Templates<!-- Add arrow --></a></li>
-                <li><a href="#">Form Templates<!-- Add arrow --></a></li>
-            </ul>
+                <h2>Free Resources</h2>
+            
+                <h3><a href="#">Freelance Resources</a></h3>
+                <h3><a href="#">Freelance Blog by Bonsai</a></h3>
+                <h3><a href="#">How to Write a Contract</a></h3>
+                <h3><a href="#">Online Signature Maker</a></h3>
+
+            </div>
+            <div class="footer-section">
+            
+                <h3><a href="#">Self-Employed</a> </h3>
+                <h3><a href="#">Self-Employed Tax Calculator</a></h3>
+                <h3><a href="#">Self-Employed Tax Deductions</a></h3>
+            
+            </div>
+            <div class="footer-section">
+
+                <h4>Templates</h4>
+            
+                <h3>Invoice Templates <box-icon name='chevron-down'></box-icon></h3>
+                <h3>Proposal Templates <box-icon name='chevron-down'></box-icon></h3>
+                <h3>Contract Templates <box-icon name='chevron-down'></box-icon></h3>
+                <h3>Agreement Templates <box-icon name='chevron-down'></box-icon></h3>
+                <h3>Scope of Work Templates <box-icon name='chevron-down'></box-icon></h3>
+                <h3>Quote Templates <box-icon name='chevron-down'></box-icon></h3>
+                <h3><a href="#">Credit Note Templates</a></h3>
+                <h3><a href="#">Estimate Templates</a></h3>
+                <h3><a href="#">Form Templates</a></h3>
+
+            </div>
 
         </div>
 
         <div class="col">
-            <h2>Bonsai</h2>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Supports</a></li>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Legal</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Affiliates</a></li>
-                <li><a href="#">Write for Us</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Comparisons <!-- Add arrow --></a></li>
-            </ul>
+
+            <div class="footer-section">
+                <h2>Bonsai</h2>
+            
+                <h3><a href="#">About</a></h3>
+                <h3><a href="#">Careers</a></h3>
+                <h3><a href="#">Supports</a></h3>
+                <h3><a href="#">LinkedIn</a></h3>
+                <h3><a href="#">Twitter</a></h3>
+                <h3><a href="#">Privacy Policy</a></h3>
+                <h3><a href="#">Legal</a></h3>
+            
+            </div>
+            <div class="footer-section">
+                <h3><a href="#">Affiliates</a></h3>
+                <h3><a href="#">Write for Us</a></h3>
+            </div>
+            <div class="footer-section">
+                <h3><a href="#">Comparisons</a><box-icon name='chevron-down'></box-icon></h3>
+            </div>
+            
         </div>
 
     </footer>
     
+    <script src="index.js"></script>
 </body>
 </html>

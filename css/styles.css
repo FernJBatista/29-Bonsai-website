@@ -137,6 +137,547 @@ table {
 :root {
   --green: #00b289;
   --gray: #4c4d5f;
-  --white: #ffffff;
   --yellow: #f8db62;
 }
+
+header {
+  background-color: white;
+  padding: 1rem 2rem;
+  font-family: "Proxima Nova", sans-serif;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+header nav div#desktop-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 70rem;
+}
+header nav div#desktop-nav img {
+  height: 2rem;
+  width: auto;
+}
+header nav div#desktop-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 3rem;
+}
+header nav div#desktop-nav ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header nav div#desktop-nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 1rem 0.25rem;
+}
+header nav div#desktop-nav ul li div#prod-dropdown {
+  display: none;
+}
+header nav div#desktop-nav div#nav-cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+header nav div#desktop-nav div#nav-cta a {
+  text-decoration: none;
+}
+header nav div#desktop-nav div#nav-cta a button {
+  background-color: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+header nav div#desktop-nav div#nav-cta a button.main-button {
+  background-color: var(--green);
+  color: white;
+  border: 1px solid transparent;
+}
+header nav div#desktop-nav div#nav-cta a button.main-button:hover {
+  background-color: #008566;
+}
+header nav div#mobile-nav {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+  width: 100%;
+  position: relative;
+}
+main div.blue-shape {
+  position: absolute;
+  top: -88%;
+  right: -23%;
+  left: 0;
+  bottom: auto;
+  width: 90%;
+  height: 120%;
+  z-index: -1;
+  display: block;
+  background-color: #f2faff;
+  transform: rotate(-23deg);
+}
+main section#plans-and-pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 70rem;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+main section#plans-and-pricing div#pricing-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25%;
+  width: 100%;
+  max-width: 55rem;
+}
+main section#plans-and-pricing div#pricing-title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--gray);
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 1rem;
+  margin-right: 1.5rem;
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch input:checked + .slider {
+  background-color: var(--green);
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch input:focus + .slider {
+  box-shadow: 0 0 1px var(--gray);
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch .slider.round {
+  border-radius: 34px;
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch .slider.round:before {
+  border-radius: 50%;
+}
+main section#plans-and-pricing div#pricing-title div#toggle-holder img {
+  position: absolute;
+  right: -1.25rem;
+  top: -1.75rem;
+}
+main div#pricing-plans {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  max-width: 100%;
+}
+main div#pricing-plans div.plan {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 2.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  border: 1px solid rgba(2, 4, 69, 0.15);
+  min-width: 15rem;
+}
+main div#pricing-plans div.plan div.plan-item {
+  max-width: 22rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main div#pricing-plans div.plan div.plan-item div.title {
+  display: flex;
+  flex-direction: column;
+}
+main div#pricing-plans div.plan div.plan-item div.title h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray);
+  margin-bottom: 0.25rem;
+}
+main div#pricing-plans div.plan div.plan-item div.title p {
+  font-size: 0.825rem;
+  line-height: 1.5;
+  color: var(--gray);
+  width: 80%;
+}
+main div#pricing-plans div.plan div.plan-item div.price {
+  display: flex;
+  flex-direction: row;
+  color: var(--gray);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--green);
+  width: 100%;
+  padding-top: 1rem;
+}
+main div#pricing-plans div.plan div.plan-item div.price box-icon {
+  margin-top: 0.5rem;
+}
+main div#pricing-plans div.plan div.plan-item div.price h2 {
+  font-size: 4rem;
+  font-weight: 500;
+  color: var(--gray);
+}
+main div#pricing-plans div.plan div.plan-item div.price p {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  align-self: flex-end;
+}
+main div#pricing-plans div.plan div.plan-item div.features {
+  padding-top: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+main div#pricing-plans div.plan div.plan-item div.features ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+main div#pricing-plans div.plan div.plan-item div.features ul li {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--gray);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+}
+main div#pricing-plans div.plan div.plan-item a {
+  text-decoration: none;
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+}
+main div#pricing-plans div.plan div.plan-item a button {
+  background-color: var(--green);
+  text-transform: uppercase;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+main div#pricing-plans div.plan div.plan-item a button:hover {
+  background-color: #007f62;
+}
+main section#add-ons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 70rem;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+main section#add-ons div.add-on {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2.5rem 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 68px 0 rgba(2, 4, 69, 0.08);
+}
+main section#add-ons div.add-on div.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+main section#add-ons div.add-on div.content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  line-height: 1.2;
+}
+main section#add-ons div.add-on div.content p {
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+main section#add-ons div.add-on div.content a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.1rem;
+  margin-top: 0.5rem;
+}
+main section#add-ons div.add-on div.content a button {
+  text-transform: uppercase;
+  color: var(--green);
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  padding: 0;
+}
+main section#add-ons div.add-on h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+main section#add-ons div.add-on div.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 6rem;
+}
+main section#add-ons div.add-on div.price h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+main section#add-ons div.add-on div.price h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray);
+}
+main section#cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+}
+main section#cta div.container {
+  width: 100%;
+  max-width: 62rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  border-radius: 1rem;
+  background-color: #f2f9ff;
+}
+main section#cta div.container h2 {
+  font-size: 2.5rem;
+  line-height: 1.5;
+  color: var(--gray);
+  text-align: start;
+}
+main section#cta div.container h2 span {
+  color: var(--green);
+}
+main section#cta div.container a {
+  text-decoration: none;
+}
+main section#cta div.container a button {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  background-color: var(--green);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+main section#faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 52rem;
+}
+main section#faq h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 2.5rem;
+}
+main section#faq div#faq-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main section#faq div#faq-container div.faq-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.25rem 2rem 0.5rem;
+}
+main section#faq div#faq-container div.faq-item button.accordion {
+  background-color: transparent;
+  border: none;
+  color: var(--gray);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 100%;
+}
+main section#faq div#faq-container div.faq-item button.accordion .active, main section#faq div#faq-container div.faq-item button.accordion:hover {
+  color: var(--green);
+}
+main section#faq div#faq-container div.faq-item .active {
+  color: var(--green);
+}
+main section#faq div#faq-container div.faq-item div.accordion-content {
+  padding: 0;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease-out;
+  width: 100%;
+  margin-right: 2rem;
+}
+main section#faq div#faq-container div.faq-item div.accordion-content p {
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4rem;
+  font-family: "Roboto", sans-serif;
+}
+footer div.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 15rem;
+  margin-bottom: 2rem;
+}
+footer div.col div.footer-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+footer div.col div.footer-section h2 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+footer div.col div.footer-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
+}
+footer div.col div.footer-section h3 {
+  font-size: 1rem;
+  margin-bottom: 0.875em;
+  color: rgba(76, 77, 95, 0.5960784314);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+footer div.col div.footer-section h3 a {
+  text-decoration: none;
+  color: rgba(76, 77, 95, 0.5960784314);
+}
+footer div.col div.footer-section h3 span {
+  color: var(--green);
+}/*# sourceMappingURL=styles.css.map */
