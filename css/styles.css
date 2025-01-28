@@ -230,6 +230,7 @@ main {
   scroll-behavior: smooth;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 main div.blue-shape {
   position: absolute;
@@ -303,7 +304,7 @@ main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch 
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--green);
   transition: 0.4s;
 }
 main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch .slider:before {
@@ -320,7 +321,7 @@ main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch 
   background-color: var(--green);
 }
 main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch input:focus + .slider {
-  box-shadow: 0 0 1px var(--gray);
+  box-shadow: 0 0 1px var(--green);
 }
 main section#plans-and-pricing div#pricing-title div#toggle-holder label.switch input:checked + .slider:before {
   transform: translateX(26px);
@@ -343,9 +344,38 @@ main div#pricing-plans {
   justify-content: space-between;
   align-items: stretch;
   gap: 1rem;
-  max-width: 100%;
+  width: 100%;
 }
-main div#pricing-plans div.plan {
+main div#pricing-plans div#monthly-plans {
+  opacity: 1;
+  visibility: visible;
+}
+main div#pricing-plans div#yearly-plans {
+  opacity: 0;
+  visibility: hidden;
+}
+main div#pricing-plans div#yearly-plans div.price {
+  padding-bottom: 0.5rem;
+  border-bottom: none !important;
+}
+main div#pricing-plans div#yearly-plans div.billed-yearly {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--green);
+}
+main div#pricing-plans div.plan-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+}
+main div#pricing-plans div.plan-container div.plan {
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
@@ -356,7 +386,7 @@ main div#pricing-plans div.plan {
   border: 1px solid rgba(2, 4, 69, 0.15);
   min-width: 15rem;
 }
-main div#pricing-plans div.plan div.plan-item {
+main div#pricing-plans div.plan-container div.plan div.plan-item {
   max-width: 22rem;
   height: 100%;
   display: flex;
@@ -364,23 +394,23 @@ main div#pricing-plans div.plan div.plan-item {
   justify-content: space-between;
   align-items: flex-start;
 }
-main div#pricing-plans div.plan div.plan-item div.title {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.title {
   display: flex;
   flex-direction: column;
 }
-main div#pricing-plans div.plan div.plan-item div.title h3 {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.title h3 {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--gray);
   margin-bottom: 0.25rem;
 }
-main div#pricing-plans div.plan div.plan-item div.title p {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.title p {
   font-size: 0.825rem;
   line-height: 1.5;
   color: var(--gray);
   width: 80%;
 }
-main div#pricing-plans div.plan div.plan-item div.price {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.price {
   display: flex;
   flex-direction: row;
   color: var(--gray);
@@ -389,26 +419,26 @@ main div#pricing-plans div.plan div.plan-item div.price {
   width: 100%;
   padding-top: 1rem;
 }
-main div#pricing-plans div.plan div.plan-item div.price box-icon {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.price box-icon {
   margin-top: 0.5rem;
 }
-main div#pricing-plans div.plan div.plan-item div.price h2 {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.price h2 {
   font-size: 4rem;
   font-weight: 500;
   color: var(--gray);
 }
-main div#pricing-plans div.plan div.plan-item div.price p {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.price p {
   text-transform: uppercase;
   font-size: 1.5rem;
   margin-left: 1rem;
   align-self: flex-end;
 }
-main div#pricing-plans div.plan div.plan-item div.features {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.features {
   padding-top: 2rem;
   margin-bottom: 4rem;
   width: 100%;
 }
-main div#pricing-plans div.plan div.plan-item div.features ul {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.features ul {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -416,7 +446,7 @@ main div#pricing-plans div.plan div.plan-item div.features ul {
   align-items: flex-start;
   gap: 0.5rem;
 }
-main div#pricing-plans div.plan div.plan-item div.features ul li {
+main div#pricing-plans div.plan-container div.plan div.plan-item div.features ul li {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -426,13 +456,13 @@ main div#pricing-plans div.plan div.plan-item div.features ul li {
   align-items: center;
   gap: 0.25rem;
 }
-main div#pricing-plans div.plan div.plan-item a {
+main div#pricing-plans div.plan-container div.plan div.plan-item a {
   text-decoration: none;
   width: 100%;
   height: -moz-max-content;
   height: max-content;
 }
-main div#pricing-plans div.plan div.plan-item a button {
+main div#pricing-plans div.plan-container div.plan div.plan-item a button {
   background-color: var(--green);
   text-transform: uppercase;
   color: white;
@@ -444,7 +474,7 @@ main div#pricing-plans div.plan div.plan-item a button {
   border-radius: 0.5rem;
   cursor: pointer;
 }
-main div#pricing-plans div.plan div.plan-item a button:hover {
+main div#pricing-plans div.plan-container div.plan div.plan-item a button:hover {
   background-color: #007f62;
 }
 main section#add-ons {
@@ -456,6 +486,7 @@ main section#add-ons {
   max-width: 70rem;
   gap: 2rem;
   margin-top: 4rem;
+  padding: 2rem 4rem;
 }
 main section#add-ons div.add-on {
   display: flex;
@@ -481,7 +512,7 @@ main section#add-ons div.add-on div.content h3 {
 }
 main section#add-ons div.add-on div.content p {
   font-size: 1rem;
-  color: var(--gray);
+  color: rgba(76, 77, 95, 0.5960784314);
   line-height: 1.5;
 }
 main section#add-ons div.add-on div.content a {
@@ -631,41 +662,52 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: flex-start;
-  padding: 4rem;
+  justify-content: center;
+  padding: 8rem 2rem;
   font-family: "Roboto", sans-serif;
+  width: 100%;
 }
-footer div.col {
+footer div#footer-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 70rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+footer div#footer-container div.col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.5rem;
   align-items: flex-start;
+  flex: 1;
   width: 100%;
-  max-width: 15rem;
+  max-width: 12rem;
   margin-bottom: 2rem;
 }
-footer div.col div.footer-section {
+footer div#footer-container div.col div.footer-section {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  width: 100%;
 }
-footer div.col div.footer-section h2 {
+footer div#footer-container div.col div.footer-section h2 {
   font-size: 1.25rem;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 2.5rem;
   letter-spacing: 0.1rem;
 }
-footer div.col div.footer-section h4 {
+footer div#footer-container div.col div.footer-section h4 {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 1rem;
   letter-spacing: 0.05rem;
 }
-footer div.col div.footer-section h3 {
+footer div#footer-container div.col div.footer-section h3 {
   font-size: 1rem;
+  line-height: 1.5;
   margin-bottom: 0.875em;
   color: rgba(76, 77, 95, 0.5960784314);
   display: flex;
@@ -673,11 +715,45 @@ footer div.col div.footer-section h3 {
   align-items: center;
   justify-content: flex-start;
   gap: 0.25rem;
+  cursor: pointer;
 }
-footer div.col div.footer-section h3 a {
+footer div#footer-container div.col div.footer-section h3 a {
   text-decoration: none;
   color: rgba(76, 77, 95, 0.5960784314);
 }
-footer div.col div.footer-section h3 span {
+footer div#footer-container div.col div.footer-section h3 span {
   color: var(--green);
+}
+footer div#footer-container div.col div.footer-section h3.footer-toggle {
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid rgba(76, 77, 95, 0.1450980392);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+footer div#footer-container div.col div.footer-section h3.footer-toggle.active {
+  margin-bottom: 0.875rem !important;
+  border-bottom: none !important;
+  transition: all 0.3s ease-in-out;
+}
+footer div#footer-container div.col div.footer-section .footer-active {
+  margin-bottom: 0.875rem !important;
+  border-bottom: none !important;
+  transition: all 0.3s ease-in-out;
+}
+footer div#footer-container div.col div.footer-section div.footer-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+footer div#footer-container div.col div.footer-section div.footer-panel h3 {
+  margin-left: 0.5rem;
+  line-height: 1.5;
+}
+footer div#footer-container div.col div.footer-section div.footer-panel h3:last-child {
+  margin-bottom: 1.5rem;
 }/*# sourceMappingURL=styles.css.map */
