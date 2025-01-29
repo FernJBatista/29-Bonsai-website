@@ -102,10 +102,6 @@ section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 ol,
 ul {
   list-style: none;
@@ -144,6 +140,13 @@ header {
   background-color: white;
   padding: 1rem 2rem;
   font-family: "Proxima Nova", sans-serif;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+    position: relative;
+  }
 }
 header nav {
   display: flex;
@@ -159,6 +162,11 @@ header nav div#desktop-nav {
   align-items: center;
   width: 100%;
   max-width: 70rem;
+}
+@media screen and (max-width: 768px) {
+  header nav div#desktop-nav {
+    display: none;
+  }
 }
 header nav div#desktop-nav img {
   height: 2rem;
@@ -221,6 +229,161 @@ header nav div#desktop-nav div#nav-cta a button.main-button:hover {
 header nav div#mobile-nav {
   display: none;
 }
+@media screen and (max-width: 768px) {
+  header nav div#mobile-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  header nav div#mobile-nav img {
+    height: 1.5rem;
+    width: auto;
+  }
+  header nav div#mobile-nav div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+  position: relative;
+}
+body div#mobile-menu {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+}
+body div#mobile-menu div#mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  margin-bottom: 2rem;
+}
+body div#mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+body div#mobile-menu ul li {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+body div#mobile-menu ul li div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 1.5rem;
+}
+body div#mobile-menu ul li div h3, body div#mobile-menu ul li div h3.dropdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.875rem 0;
+}
+body div#mobile-menu ul li div h3 a, body div#mobile-menu ul li div h3.dropdown a {
+  text-decoration: none;
+  color: black;
+}
+body div#mobile-menu ul li div div.dropdown-section {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  z-index: 3;
+  top: 0;
+}
+body div#mobile-menu ul li div div.dropdown-section div.dropdown-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(76, 77, 95, 0.1450980392);
+}
+body div#mobile-menu ul li div div.dropdown-section div.dropdown-item:hover {
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s ease-in-out;
+}
+body div#mobile-menu ul li div div.dropdown-section div.dropdown-item div.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  border-bottom: none;
+  margin: 0;
+}
+body div#mobile-menu ul li div div.dropdown-section div.dropdown-item div.dropdown-content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+body div#mobile-menu ul li div div.dropdown-section div.dropdown-item div.dropdown-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(76, 77, 95, 0.5960784314);
+}
+body div#mobile-menu #mobile-menu-cta {
+  margin: 1.5rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+body div#mobile-menu #mobile-menu-cta a {
+  text-decoration: none;
+  width: 100%;
+}
+body div#mobile-menu #mobile-menu-cta a button {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green);
+  background-color: transparent;
+  border: 2px solid var(--green);
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+body div#mobile-menu #mobile-menu-cta a button.cta {
+  background-color: var(--green);
+  color: white;
+}
 
 main {
   display: flex;
@@ -231,6 +394,11 @@ main {
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  main {
+    padding: 0 1.5rem;
+  }
 }
 main div.blue-shape {
   position: absolute;
@@ -264,11 +432,21 @@ main section#plans-and-pricing div#pricing-title {
   width: 100%;
   max-width: 55rem;
 }
+@media screen and (max-width: 768px) {
+  main section#plans-and-pricing div#pricing-title {
+    justify-content: space-between;
+  }
+}
 main section#plans-and-pricing div#pricing-title h1 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   font-weight: 500;
   color: var(--gray);
+}
+@media screen and (max-width: 768px) {
+  main section#plans-and-pricing div#pricing-title h1 {
+    font-size: 1.75rem;
+  }
 }
 main section#plans-and-pricing div#pricing-title div#toggle-holder {
   position: relative;
@@ -339,7 +517,6 @@ main section#plans-and-pricing div#pricing-title div#toggle-holder img {
 }
 main div#pricing-plans {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
@@ -349,16 +526,20 @@ main div#pricing-plans {
 main div#pricing-plans div#monthly-plans {
   opacity: 1;
   visibility: visible;
+  display: flex;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
 }
 main div#pricing-plans div#yearly-plans {
   opacity: 0;
   visibility: hidden;
+  display: none;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
 }
-main div#pricing-plans div#yearly-plans div.price {
+main div#pricing-plans div.price {
+  width: 100%;
   padding-bottom: 0.5rem;
-  border-bottom: none !important;
 }
-main div#pricing-plans div#yearly-plans div.billed-yearly {
+main div#pricing-plans div.billed-yearly {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -366,7 +547,7 @@ main div#pricing-plans div#yearly-plans div.billed-yearly {
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--green);
 }
-main div#pricing-plans div.plan-container {
+main div.plan-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -374,11 +555,18 @@ main div#pricing-plans div.plan-container {
   align-items: stretch;
   gap: 1rem;
   width: 100%;
-}
-main div#pricing-plans div.plan-container div.plan {
   flex: 1;
+}
+@media screen and (max-width: 768px) {
+  main div.plan-container {
+    flex-direction: column;
+  }
+}
+main div.plan-container div.plan {
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex: 1;
+  justify-content: stretch;
   align-items: flex-start;
   padding: 3rem 2.5rem 1rem;
   border-radius: 0.5rem;
@@ -386,7 +574,13 @@ main div#pricing-plans div.plan-container div.plan {
   border: 1px solid rgba(2, 4, 69, 0.15);
   min-width: 15rem;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item {
+@media screen and (max-width: 768px) {
+  main div.plan-container div.plan {
+    min-width: 100%;
+    padding: 2rem 2rem;
+  }
+}
+main div.plan-container div.plan div.plan-item {
   max-width: 22rem;
   height: 100%;
   display: flex;
@@ -394,59 +588,83 @@ main div#pricing-plans div.plan-container div.plan div.plan-item {
   justify-content: space-between;
   align-items: flex-start;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.title {
+@media screen and (max-width: 768px) {
+  main div.plan-container div.plan div.plan-item {
+    max-width: 100%;
+    flex: 1;
+  }
+}
+main div.plan-container div.plan div.plan-item div.plan-content {
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
+  flex: 1;
+  width: 100%;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.title h3 {
+main div.plan-container div.plan div.plan-item div.plan-content div.title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+main div.plan-container div.plan div.plan-item div.plan-content div.title h3 {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--gray);
   margin-bottom: 0.25rem;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.title p {
-  font-size: 0.825rem;
+main div.plan-container div.plan div.plan-item div.plan-content div.title p {
+  font-size: 1rem;
   line-height: 1.5;
   color: var(--gray);
   width: 80%;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.price {
+@media screen and (max-width: 768px) {
+  main div.plan-container div.plan div.plan-item div.plan-content div.title p {
+    width: 100%;
+  }
+}
+main div.plan-container div.plan div.plan-item div.plan-content div.price {
   display: flex;
   flex-direction: row;
+  flex: 1;
   color: var(--gray);
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--green);
   width: 100%;
   padding-top: 1rem;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.price box-icon {
+main div.plan-container div.plan div.plan-item div.plan-content div.price box-icon {
   margin-top: 0.5rem;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.price h2 {
+main div.plan-container div.plan div.plan-item div.plan-content div.price h2 {
   font-size: 4rem;
   font-weight: 500;
   color: var(--gray);
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.price p {
+main div.plan-container div.plan div.plan-item div.plan-content div.price p {
   text-transform: uppercase;
   font-size: 1.5rem;
   margin-left: 1rem;
   align-self: flex-end;
+  width: 100%;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.features {
+main div.plan-container div.plan div.plan-item div.plan-content div.features {
   padding-top: 2rem;
   margin-bottom: 4rem;
   width: 100%;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.features ul {
+main div.plan-container div.plan div.plan-item div.plan-content div.features ul {
   list-style: none;
   display: flex;
   flex-direction: column;
+  flex: 1;
   justify-content: center;
   align-items: flex-start;
   gap: 0.5rem;
+  width: 100%;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item div.features ul li {
+main div.plan-container div.plan div.plan-item div.plan-content div.features ul li {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -456,13 +674,13 @@ main div#pricing-plans div.plan-container div.plan div.plan-item div.features ul
   align-items: center;
   gap: 0.25rem;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item a {
+main div.plan-container div.plan div.plan-item a {
   text-decoration: none;
   width: 100%;
   height: -moz-max-content;
   height: max-content;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item a button {
+main div.plan-container div.plan div.plan-item a button {
   background-color: var(--green);
   text-transform: uppercase;
   color: white;
@@ -474,7 +692,7 @@ main div#pricing-plans div.plan-container div.plan div.plan-item a button {
   border-radius: 0.5rem;
   cursor: pointer;
 }
-main div#pricing-plans div.plan-container div.plan div.plan-item a button:hover {
+main div.plan-container div.plan div.plan-item a button:hover {
   background-color: #007f62;
 }
 main section#add-ons {
@@ -487,6 +705,12 @@ main section#add-ons {
   gap: 2rem;
   margin-top: 4rem;
   padding: 2rem 4rem;
+}
+@media screen and (max-width: 768px) {
+  main section#add-ons {
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
 }
 main section#add-ons div.add-on {
   display: flex;
@@ -562,6 +786,11 @@ main section#cta {
   align-items: center;
   padding: 6rem 0;
 }
+@media screen and (max-width: 768px) {
+  main section#cta {
+    padding: 3.5rem 0;
+  }
+}
 main section#cta div.container {
   width: 100%;
   max-width: 62rem;
@@ -573,17 +802,32 @@ main section#cta div.container {
   border-radius: 1rem;
   background-color: #f2f9ff;
 }
+@media screen and (max-width: 768px) {
+  main section#cta div.container {
+    padding: 3.5rem 2rem;
+    gap: 6rem;
+  }
+}
 main section#cta div.container h2 {
   font-size: 2.5rem;
   line-height: 1.5;
   color: var(--gray);
   text-align: start;
 }
+@media screen and (max-width: 768px) {
+  main section#cta div.container h2 {
+    font-size: 1.75rem;
+    text-align: center;
+    font-weight: 600;
+  }
+}
 main section#cta div.container h2 span {
   color: var(--green);
 }
 main section#cta div.container a {
   text-decoration: none;
+  width: -moz-max-content;
+  width: max-content;
 }
 main section#cta div.container a button {
   text-transform: uppercase;
@@ -594,6 +838,8 @@ main section#cta div.container a button {
   border: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
+  width: -moz-max-content;
+  width: max-content;
 }
 main section#faq {
   display: flex;
@@ -603,11 +849,21 @@ main section#faq {
   width: 100%;
   max-width: 52rem;
 }
+@media screen and (max-width: 768px) {
+  main section#faq {
+    max-width: none;
+  }
+}
 main section#faq h2 {
   font-size: 2rem;
   font-weight: 600;
   color: var(--green);
   margin-bottom: 2.5rem;
+}
+@media screen and (max-width: 768px) {
+  main section#faq h2 {
+    margin-bottom: 1.5rem;
+  }
 }
 main section#faq div#faq-container {
   display: flex;
@@ -619,6 +875,11 @@ main section#faq div#faq-container div.faq-item {
   flex-direction: column;
   width: 100%;
   padding: 1.25rem 2rem 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  main section#faq div#faq-container div.faq-item {
+    padding: 1.25rem 0 0.5rem;
+  }
 }
 main section#faq div#faq-container div.faq-item button.accordion {
   background-color: transparent;
@@ -668,6 +929,11 @@ footer {
   font-family: "Roboto", sans-serif;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 4rem 2rem;
+  }
+}
 footer div#footer-container {
   display: flex;
   flex-direction: row;
@@ -675,6 +941,11 @@ footer div#footer-container {
   max-width: 70rem;
   align-items: flex-start;
   justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  footer div#footer-container {
+    flex-direction: column;
+  }
 }
 footer div#footer-container div.col {
   display: flex;
@@ -698,6 +969,12 @@ footer div#footer-container div.col div.footer-section h2 {
   font-weight: 600;
   margin-bottom: 2.5rem;
   letter-spacing: 0.1rem;
+}
+@media screen and (max-width: 768px) {
+  footer div#footer-container div.col div.footer-section h2 {
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05rem;
+  }
 }
 footer div#footer-container div.col div.footer-section h4 {
   font-size: 1rem;
